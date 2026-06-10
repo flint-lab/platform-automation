@@ -4,17 +4,36 @@ A dedicated repository that contains automation code for all platform features.
 
 ## Purpose
 
-This repository serves as the central location for feature-specific automation development and maintenance across the platform.
+This repository serves as the central location for automation development and maintenance across the platform.
 
-## Branching Strategy
-
-Each feature team or owner is responsible for maintaining automation code in their respective feature branch.
-
-### Example
+## Packages
 
 ```text
-main
-├── feature-settings
-├── feature-emulators
-├── feature-streaming
-└── feature-profile
+platform-automation/
+├── FlintAPITest/     # API automation scripts and helpers
+├── FlintCliTest/     # CLI automation scripts and helpers
+└── FlintUITest/      # UI automation scripts and helpers
+```
+
+## Package Overview
+
+### FlintAPITest
+Contains API automation scripts, test utilities, and reusable API helpers.
+
+### FlintCliTest
+Contains CLI automation scripts, test utilities, and reusable CLI helpers.
+
+### FlintUITest
+Contains UI automation scripts, page objects, test utilities, and reusable UI helpers.
+
+## Contribution Guidelines
+
+- Add automation code to the appropriate package.
+- Organize tests and utilities based on feature requirements.
+- Follow established coding and automation standards.
+- Submit changes through merge requests for review.
+
+## Notes
+
+- This repository serves as the single source of truth for all platform automation.
+- Additional packages and automation modules can be added as the platform evolves.
