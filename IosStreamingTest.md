@@ -107,3 +107,5 @@ chmod +x RunScripts/IOSStreamingTestRun.sh
 - At least one iOS device must be available for the tests to run. If no devices are available, the tests will fail with an appropriate error message. Please ensure that at least one iOS device is available in the device pool before running the tests.
 
 - these test runs only on chrome browser, please ensure that google chrome is installed and available in your system PATH.
+
+- webrtc is streaming the display of the device using h264 so the browsers need to support h264 codec for the streaming tests to work. Google Chrome, Firefox , Safari supports h264, so it is required for running these tests.
