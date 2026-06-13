@@ -5,7 +5,7 @@ set -euo pipefail
 # Modes:
 #   quiet    - quiet run (`-q`) [default]
 #   verbose  - verbose with -v -s
-#   html     - generate HTML report (`--html=AndroidStreamingTest-date-time.html --self-contained-html`)
+#   html     - generate HTML report (`--html=AndroidStreamingTestReport-date-time.html --self-contained-html`)
 
 MODE=${1:-html}
 case "$MODE" in
@@ -16,10 +16,10 @@ case "$MODE" in
 		pytest -v -s AndroidStreamingTest/test_android_streaming.py
 		;;
 	html)
-		pytest -v AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTest-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
+		pytest -v AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTestReport-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
 		;;
 	*)
 		echo "Unknown mode: $MODE — falling back to html"
-		pytest -v AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTest-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
+		pytest -v AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTestReport-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
 		;;
 esac
