@@ -35,21 +35,13 @@ pip install --upgrade pip
 pip install -r AndroidStreamingTest/requirements.txt
 ```
 
-3. Provide environment variables required by the tests.
-
-- The repository includes `AndroidStreamingTest/test.env` as a template. Populate any secrets or platform-specific values there.
-- Load the file into your environment before running tests:
-
+3. Ensure the `test.env` file is properly configured with necessary environment - Environment Variables in `AndroidStreamingTest/test.env`
 ```bash
-set -o allexport; source AndroidStreamingTest/test.env; set +o allexport
+TOKEN=<YOUR_PAT_TOKEN>
+DEVICE_ID=904bd59f-e3b1-43d0-8af4-770bf2a4fb7a // any available android device id
+FLINT_API_BASE=https://staging.api.flintlab.io // change according to your environment
+HEARTBEAT_WAIT=5 // wait time in seconds for the heartbeat to be sent
 ```
-
-Alternative (POSIX shells):
-
-```bash
-export $(grep -v '^#' AndroidStreamingTest/test.env | xargs)
-```
-
 
 ## Running the tests
 
@@ -58,13 +50,6 @@ export $(grep -v '^#' AndroidStreamingTest/test.env | xargs)
 ```bash
 pytest -q AndroidStreamingTest/test_android_streaming.py
 ```
-
-# Environment Variables in `AndroidStreamingTest/test.env`
-TOKEN=<YOUR_PAT_TOKEN>
-DEVICE_ID=904bd59f-e3b1-43d0-8af4-770bf2a4fb7a // any available android device id
-FLINT_API_BASE=https://staging.api.flintlab.io // change according to your environment
-HEARTBEAT_WAIT=5 // wait time in seconds for the heartbeat to be sent
-
 
 
 (Or)
