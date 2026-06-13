@@ -4,3 +4,12 @@ venv
 .venv
 report.html
 AndroidStreamingTestReport*.html
+
+# Test-related
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+sample_client_code
