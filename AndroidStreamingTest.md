@@ -13,7 +13,7 @@ The Android streaming test suite validates end-to-end streaming functionality on
 
 ## Repository layout
 
-- `AndroidStreamingTest/` — test sources
+- `FlintAPITest/AndroidStreamingTest/` — test sources
 	- `test_android_streaming.py` — main test file
 	- `conftest.py` — pytest fixtures and setup
 	- `requirements.txt` — Python dependencies
@@ -32,10 +32,10 @@ source .venv/bin/activate
 
 ```bash
 pip install --upgrade pip
-pip install -r AndroidStreamingTest/requirements.txt
+pip install -r FlintAPITest/AndroidStreamingTest/requirements.txt
 ```
 
-3. Ensure the `test.env` file is properly configured with necessary environment - Environment Variables in `AndroidStreamingTest/test.env`
+3. Ensure the `test.env` file is properly configured with necessary environment - Environment Variables in `FlintAPITest/AndroidStreamingTest/test.env`
 ```bash
 TOKEN=<YOUR_PAT_TOKEN>
 DEVICE_ID=904bd59f-e3b1-43d0-8af4-770bf2a4fb7a // any available android device id
@@ -48,7 +48,7 @@ HEARTBEAT_WAIT=5 // wait time in seconds for the heartbeat to be sent
 - From the repository root (recommended):
 
 ```bash
-pytest -q AndroidStreamingTest/test_android_streaming.py
+pytest -q FlintAPITest/AndroidStreamingTest/test_android_streaming.py
 ```
 
 
@@ -67,7 +67,7 @@ source .venv/bin/activate
 
 # install dependencies
 pip install --upgrade pip
-pip install -r AndroidStreamingTest/requirements.txt
+pip install -r FlintAPITest/AndroidStreamingTest/requirements.txt
 
 # permit execution of the helper script
 chmod +x RunScripts/AndroidStreamingTestRun.sh

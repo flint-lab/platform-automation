@@ -10,16 +10,16 @@ set -euo pipefail
 MODE=${1:-html}
 case "$MODE" in
 	quiet)
-		pytest -q AndroidStreamingTest/test_android_streaming.py
+		pytest -q FlintAPITest/AndroidStreamingTest/test_android_streaming.py
 		;;
 	verbose)
-		pytest -v -s AndroidStreamingTest/test_android_streaming.py
+		pytest -v -s FlintAPITest/AndroidStreamingTest/test_android_streaming.py
 		;;
 	html)
-		pytest -v AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTestReport-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
+		pytest -v FlintAPITest/AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTestReport-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
 		;;
 	*)
 		echo "Unknown mode: $MODE — falling back to html"
-		pytest -v AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTestReport-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
+		pytest -v FlintAPITest/AndroidStreamingTest/test_android_streaming.py --html=AndroidStreamingTestReport-$(date +%Y-%m-%d)--$(date +%H-%M-%S).html --self-contained-html
 		;;
 esac
