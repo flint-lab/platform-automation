@@ -42,11 +42,22 @@ pip install -r FlintAPITest/IOSStreamingTest/requirements.txt
 python -m playwright install
 
 ```
+
 4. Google Chrome browser is required for the tests.
 
 Please ensure it is installed and available in your system PATH.
 ```bash 
 google-chrome --version
+
+# If Chrome is not installed on Ubuntu:
+
+apt update
+apt install -y wget curl
+
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt update
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
 ```
 
 5. Ensure the test.env file is configured with the required environment variables.
@@ -94,3 +105,5 @@ chmod +x RunScripts/IOSStreamingTestRun.sh
 - Report : HTML reports are generated in the root directory of the repository with the naming convention `IOSStreamingTestReport-YYYY-MM-DD--HH-MM-SS.html`. Each test run will create a new report with a unique timestamp.
 
 - At least one iOS device must be available for the tests to run. If no devices are available, the tests will fail with an appropriate error message. Please ensure that at least one iOS device is available in the device pool before running the tests.
+
+- these test runs only on chrome browser, please ensure that google chrome is installed and available in your system PATH.
