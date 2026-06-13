@@ -5,7 +5,7 @@ set -euo pipefail
 # Modes:
 #   quiet    - quiet run (`-q`) [default]
 #   verbose  - verbose with -v -s
-#   html     - generate HTML report (`--html=report.html --self-contained-html`)
+#   html     - generate HTML report (`--html=AndroidStreamingTest-date-time.html --self-contained-html`)
 
 MODE=${1:-html}
 case "$MODE" in

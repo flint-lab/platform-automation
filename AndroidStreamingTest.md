@@ -66,6 +66,9 @@ FLINT_API_BASE=https://staging.api.flintlab.io // change according to your envir
 HEARTBEAT_WAIT=5 // wait time in seconds for the heartbeat to be sent
 
 
+
+(Or)
+
 ## Android Streaming Tests using the helper script
 
 Run the Android streaming tests located in the `AndroidStreamingTest/` directory. A helper script is provided at `RunScripts/AndroidStreamingTestRun.sh` to run the suite in several modes.
