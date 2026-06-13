@@ -24,8 +24,8 @@ The Android streaming test suite validates end-to-end streaming functionality on
 1. Create and activate a virtual environment (recommended):
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 2. Install Python dependencies:
