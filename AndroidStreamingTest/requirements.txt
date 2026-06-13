@@ -1,0 +1,6 @@
+pytest==9.0.3
+pytest-asyncio==1.4.0
+requests==2.31.0
+websockets==11.0.3
+python-dotenv==0.21.0
+pytest-html==3.2.0

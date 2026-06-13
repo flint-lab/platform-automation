@@ -1,0 +1,95 @@
+# Android Streaming Test
+
+This document describes the Android streaming tests, prerequisites, and step-by-step instructions to run the tests locally.
+
+## Overview
+
+The Android streaming test suite validates end-to-end streaming functionality on Android devices. Tests are implemented in Python using `pytest` and live in the `AndroidStreamingTest/` directory.
+
+## Prerequisites
+
+- Python 3.8+ installed, virtual environment recommended
+- Git (to clone/update the repository)
+
+## Repository layout
+
+- `AndroidStreamingTest/` — test sources
+	- `test_android_streaming.py` — main test file
+	- `conftest.py` — pytest fixtures and setup
+	- `requirements.txt` — Python dependencies
+	- `test.env` — environment variables used by the tests (secrets/config)
+
+## Setup
+
+1. Create and activate a virtual environment (recommended):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2. Install Python dependencies:
+
+```bash
+pip install --upgrade pip
+pip install -r AndroidStreamingTest/requirements.txt
+```
+
+3. Provide environment variables required by the tests.
+
+- The repository includes `AndroidStreamingTest/test.env` as a template. Populate any secrets or platform-specific values there.
+- Load the file into your environment before running tests:
+
+```bash
+set -o allexport; source AndroidStreamingTest/test.env; set +o allexport
+```
+
+Alternative (POSIX shells):
+
+```bash
+export $(grep -v '^#' AndroidStreamingTest/test.env | xargs)
+```
+
+
+## Running the tests
+
+- From the repository root (recommended):
+
+```bash
+pytest -q AndroidStreamingTest/test_android_streaming.py
+```
+
+# Environment Variables in `AndroidStreamingTest/test.env`
+TOKEN=<YOUR_PAT_TOKEN>
+DEVICE_ID=904bd59f-e3b1-43d0-8af4-770bf2a4fb7a // any available android device id
+FLINT_API_BASE=https://staging.api.flintlab.io // change according to your environment
+HEARTBEAT_WAIT=5 // wait time in seconds for the heartbeat to be sent
+
+
+## Android Streaming Tests using the helper script
+
+Run the Android streaming tests located in the `AndroidStreamingTest/` directory. A helper script is provided at `RunScripts/AndroidStreamingTestRun.sh` to run the suite in several modes.
+
+Quick start (from the repository root):
+
+```bash
+# create and activate a virtualenv
+python3 -m venv .venv
+source .venv/bin/activate
+
+# install dependencies
+pip install --upgrade pip
+pip install -r AndroidStreamingTest/requirements.txt
+
+# permit execution of the helper script
+chmod +x RunScripts/AndroidStreamingTestRun.sh
+
+# run the helper script (defaults to HTML report)
+./RunScripts/AndroidStreamingTestRun.sh
+
+# or run verbose
+./RunScripts/AndroidStreamingTestRun.sh verbose
+
+# or run quiet
+./RunScripts/AndroidStreamingTestRun.sh quiet
+```
