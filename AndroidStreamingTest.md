@@ -38,7 +38,6 @@ pip install -r FlintAPITest/AndroidStreamingTest/requirements.txt
 3. Ensure the `test.env` file is properly configured with necessary environment - Environment Variables in `FlintAPITest/AndroidStreamingTest/test.env`
 ```bash
 TOKEN=<YOUR_PAT_TOKEN>
-DEVICE_ID=904bd59f-e3b1-43d0-8af4-770bf2a4fb7a // any available android device id
 FLINT_API_BASE=https://staging.api.flintlab.io // change according to your environment
 HEARTBEAT_WAIT=5 // wait time in seconds for the heartbeat to be sent
 ```

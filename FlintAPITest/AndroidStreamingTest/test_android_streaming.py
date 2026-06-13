@@ -202,19 +202,12 @@ async def test_device_deallocation(
     ws_url,
     release_device_fn,
 ):
-
     print("Testing device deallocation")
-
     ws = await websockets.connect(ws_url)
-
     await asyncio.sleep(2)
-
     print("Releasing device via API...")
-
     release_device_fn()
-
     e = await wait_for_close(ws)
-
     print(
         f"\nCode={e.code}"
         f"\nReason={e.reason}"
@@ -227,10 +220,7 @@ async def test_device_deallocation(
 
 @pytest.mark.asyncio
 async def test_old_url_after_deallocation(ws_url):
-
     ws = await websockets.connect(ws_url)
-
     e = await wait_for_close(ws)
-
     assert e.code == 1008
     assert "invalidated" in e.reason.lower()
