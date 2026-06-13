@@ -1,0 +1,15 @@
+__pycache__
+.pytest_cache
+venv
+.venv
+report.html
+AndroidStreamingTestReport*.html
+IOSStreamingTestReport*.html
+# Test-related
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+sample_client_code
