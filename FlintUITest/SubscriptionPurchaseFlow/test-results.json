@@ -1,0 +1,375 @@
+{
+  "config": {
+    "argv": [
+      "/home/gowtham-flint/.nvm/versions/node/v20.20.0/bin/node",
+      "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/node_modules/.bin/playwright",
+      "test",
+      "tests/subscription-flow.spec.js",
+      "--project=chromium",
+      "--headed"
+    ],
+    "configFile": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/playwright.config.js",
+    "rootDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results.xml"
+        }
+      ],
+      [
+        "line",
+        null
+      ],
+      [
+        "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/node_modules/allure-playwright/dist/index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "subscription-flow.spec.js",
+      "file": "subscription-flow.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Subscription Purchase Flow",
+          "file": "subscription-flow.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "complete subscription upgrade flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 270000,
+                  "annotations": [
+                    {
+                      "type": "slow",
+                      "location": {
+                        "file": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js",
+                        "line": 16,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 22647,
+                      "error": {
+                        "message": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('sms-code-input-0') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('sms-code-input-0') to be visible\u001b[22m\n\n    at /home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js:111:22",
+                        "location": {
+                          "file": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js",
+                          "column": 22,
+                          "line": 111
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 109 |\u001b[39m       \n \u001b[90m 110 |\u001b[39m       \u001b[90m// Wait for input to be visible and ready\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m       \u001b[36mawait\u001b[39m smsInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m       \n \u001b[90m 113 |\u001b[39m       \u001b[90m// Clear the input first\u001b[39m\n \u001b[90m 114 |\u001b[39m       \u001b[36mawait\u001b[39m smsInput\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js",
+                            "column": 22,
+                            "line": 111
+                          },
+                          "message": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('sms-code-input-0') to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 109 |\u001b[39m       \n \u001b[90m 110 |\u001b[39m       \u001b[90m// Wait for input to be visible and ready\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m       \u001b[36mawait\u001b[39m smsInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m       \n \u001b[90m 113 |\u001b[39m       \u001b[90m// Clear the input first\u001b[39m\n \u001b[90m 114 |\u001b[39m       \u001b[36mawait\u001b[39m smsInput\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js:111:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🚀 Starting subscription purchase test...\n"
+                        },
+                        {
+                          "text": "✓ Navigated to homepage\n"
+                        },
+                        {
+                          "text": "✓ Clicked login button\n"
+                        },
+                        {
+                          "text": "✓ Filled login credentials\n"
+                        },
+                        {
+                          "text": "✓ Submitted login form\n"
+                        },
+                        {
+                          "text": "✓ Login successful - Current URL: https://dev-a55ecmyv11z47ai8.us.auth0.com/login?state=hKFo2SA5c2cwbTlvWFdfUUtmMzJpcVZES1dIa2xWZ1M1akVFVqFupWxvZ2luo3RpZNkgYlNsN1RCQmJ4eVBTbHpvRjJFblZfWnJTdlZpLVdmSUqjY2lk2SAwdVhhUlZLMmt4Qm1KZTNJcEhSc2luNWFrTlppZlhpOA&client=0uXaRVK2kxBmJe3IpHRsin5akNZifXi8&protocol=oauth2&scope=openid%20profile%20email%20offline_access&redirect_uri=https%3A%2F%2Fplatform.development.flintlab.io&audience=https%3A%2F%2Fdev-api.flintlab.io&response_type=code&response_mode=query&nonce=cEU5Y2htdjktc2ZqRUdaZnREZ3JoTUo2V1YuTWN%2BM0NSfmkzTEI2LjZuYg%3D%3D&code_challenge=Z-m97lwQNF4uyvNDXDjdyrk8z5LuPnhtZ7RPIRP_5Qw&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMi4xNy4wIn0%3D\n"
+                        },
+                        {
+                          "text": "✓ Navigated to user profile\n"
+                        },
+                        {
+                          "text": "✓ Opened billing section\n"
+                        },
+                        {
+                          "text": "✓ Clicked upgrade plan\n"
+                        },
+                        {
+                          "text": "✓ Selected a plan\n"
+                        },
+                        {
+                          "text": "Payment email field not found, continuing...\n"
+                        },
+                        {
+                          "text": "✓ Starting SMS code entry (6 digits)...\n"
+                        },
+                        {
+                          "text": "❌ Test failed! Screenshot saved at: screenshots/failure-complete-subscription-upgrade-flow-1781523766222.png\n"
+                        },
+                        {
+                          "text": "Current URL: https://checkout.stripe.com/c/pay/cs_test_a1uNFQYU7Wn8RLjDtgVJByISHiYrWnzkfeu5FkSlQ0p6f6U2eK8hg8F0mE#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ2JwZGZkaGppYFNkd2xka3EnPydmamtxd2ppJyknZHVsTmB8Jz8ndW5acWB2cVowNFVjdGxgMUM9QnBrNXRiNENKSklpfTZBYUJ3U0lQZ1V8fU88cFdjVE5CMndLd3djZ3JzaHw8TERNcVQxXE82VU9SUDw1NkZwaG5EdWFxPEY8MW9ybEZLQDU1VmdQQ29ffFUnKSdjd2poVmB3c2B3Jz9xd3BgKSdnZGZuYndqcGthRmppancnPycmMDc9NTIxJyknaWR8anBxUXx1YCc%2FJ3Zsa2JpYFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-15T11:42:23.663Z",
+                      "annotations": [
+                        {
+                          "type": "slow",
+                          "location": {
+                            "file": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js",
+                            "line": 16,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results/subscription-flow-Subscrip-df9e8-e-subscription-upgrade-flow-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results/subscription-flow-Subscrip-df9e8-e-subscription-upgrade-flow-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results/subscription-flow-Subscrip-df9e8-e-subscription-upgrade-flow-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js",
+                        "column": 22,
+                        "line": 111
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36081,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🚀 Starting subscription purchase test...\n"
+                        },
+                        {
+                          "text": "✓ Navigated to homepage\n"
+                        },
+                        {
+                          "text": "✓ Clicked login button\n"
+                        },
+                        {
+                          "text": "✓ Filled login credentials\n"
+                        },
+                        {
+                          "text": "✓ Submitted login form\n"
+                        },
+                        {
+                          "text": "✓ Login successful - Current URL: https://dev-a55ecmyv11z47ai8.us.auth0.com/login?state=hKFo2SAxVVNXTFZTYmFVM1JHQlA5RGxDUlNFNTFERFl5X3V2QqFupWxvZ2luo3RpZNkgSVdQdzJDNy0xQk9EWjhsQ3ZFNW5oV0haSWhjSFdZSlGjY2lk2SAwdVhhUlZLMmt4Qm1KZTNJcEhSc2luNWFrTlppZlhpOA&client=0uXaRVK2kxBmJe3IpHRsin5akNZifXi8&protocol=oauth2&scope=openid%20profile%20email%20offline_access&redirect_uri=https%3A%2F%2Fplatform.development.flintlab.io&audience=https%3A%2F%2Fdev-api.flintlab.io&response_type=code&response_mode=query&nonce=NUk2Zy5HbVdHVGhMX2ZsSkgwbERMfjMyRnlFbFBQVkpBLV9VVUdiclRZTA%3D%3D&code_challenge=bmwIZiVqSIXBKRh0bcnXEF6xl6UYl_bCpj9RZKZTo0c&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMi4xNy4wIn0%3D\n"
+                        },
+                        {
+                          "text": "✓ Navigated to user profile\n"
+                        },
+                        {
+                          "text": "✓ Opened billing section\n"
+                        },
+                        {
+                          "text": "✓ Clicked upgrade plan\n"
+                        },
+                        {
+                          "text": "✓ Selected a plan\n"
+                        },
+                        {
+                          "text": "✓ Filled payment email\n"
+                        },
+                        {
+                          "text": "✓ Starting SMS code entry (6 digits)...\n"
+                        },
+                        {
+                          "text": "  ✓ Entered digit 1: 0\n"
+                        },
+                        {
+                          "text": "  ✓ Entered digit 2: 0\n"
+                        },
+                        {
+                          "text": "  ✓ Entered digit 3: 0\n"
+                        },
+                        {
+                          "text": "  ✓ Entered digit 4: 0\n"
+                        },
+                        {
+                          "text": "  ✓ Entered digit 5: 0\n"
+                        },
+                        {
+                          "text": "  ✓ Entered digit 6: 0\n"
+                        },
+                        {
+                          "text": "✓ SMS verification code entered successfully\n"
+                        },
+                        {
+                          "text": "✓ Submitted payment\n"
+                        },
+                        {
+                          "text": "✓ Navigated back to dashboard\n"
+                        },
+                        {
+                          "text": "✅ Test completed successfully!\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-15T11:42:47.632Z",
+                      "annotations": [
+                        {
+                          "type": "slow",
+                          "location": {
+                            "file": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/tests/subscription-flow.spec.js",
+                            "line": 16,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/gowtham-flint/Desktop/platform-auto/platform-automation/FlintUITest/SubscriptionPurchaseFlow/test-results/subscription-flow-Subscrip-df9e8-e-subscription-upgrade-flow-chromium-retry1/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "1f374ffca96386a503f8-061a91ed1703dc0dde15",
+              "file": "subscription-flow.spec.js",
+              "line": 14,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-15T11:42:22.789Z",
+    "duration": 63498.652,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 1
+  }
+}
