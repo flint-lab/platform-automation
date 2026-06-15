@@ -1,14 +1,19 @@
 #!/bin/bash
 
 # Usage: LogProcessingTest.sh [mode]
-# Modes: physical, emulator, both, help
+# Modes: physical, emulator, both, help, html
 
 # Get the script directory (RunScripts)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Go to platform-automation root (one level up)
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-# Set the test directory - LogProcessingTest is directly under FlintAPITest
+# Set the test directory
 TEST_DIR="$ROOT_DIR/FlintAPITest/LogProcessingTest"
+# Reports directory
+REPORT_DIR="$ROOT_DIR/TestReports"
+
+# Create reports directory if it doesn't exist
+mkdir -p "$REPORT_DIR"
 
 # Colors for output
 RED='\033[0;31m'
@@ -26,10 +31,11 @@ show_usage() {
     echo "Usage: $0 [mode]"
     echo ""
     echo "Modes:"
-    echo "  physical    - Run Physical Device Test only"
-    echo "  emulator    - Run Emulator Test only"
-    echo "  both        - Run both tests"
-    echo "  help        - Show this help message"
+    echo "  physical        - Run Physical Device Test only"
+    echo "  emulator        - Run Emulator Test only"
+    echo "  both            - Run both tests"
+    echo "  html            - Run both tests with HTML report"
+    echo "  help            - Show this help message"
     echo ""
     echo "If no mode is provided, interactive menu will be shown."
 }
@@ -43,9 +49,6 @@ fi
 # Check if .env file exists
 if [ ! -f "$TEST_DIR/.env" ]; then
     print_error ".env file not found in $TEST_DIR"
-    echo "   Please create .env file with:"
-    echo "   FLINT_API_TOKEN=your_token_here"
-    echo "   WAIT_TIME_FOR_LOGS=20"
     exit 1
 fi
 
@@ -67,37 +70,52 @@ print_info "Wait Time: ${WAIT_TIME_FOR_LOGS:-20} seconds"
 # Change to test directory
 cd "$TEST_DIR"
 
-# Setup virtual environment if not exists
+# Setup virtual environment only if it doesn't exist
 if [ ! -d "venv" ]; then
     print_info "Creating virtual environment..."
     python3 -m venv venv
 fi
 
-# Check if venv was created successfully
 if [ ! -f "venv/bin/python" ]; then
     print_error "Failed to create virtual environment"
     exit 1
 fi
 
-# Install requirements using venv pip directly
-if [ -f "requirements.txt" ]; then
-    print_info "Installing dependencies..."
-    venv/bin/pip install -r requirements.txt -q --disable-pip-version-check
+# Check if dependencies are already installed
+if [ ! -f "venv/.installed" ]; then
+    print_info "Installing dependencies for the first time..."
+    venv/bin/pip install -q pytest pytest-html requests python-dotenv
+    touch venv/.installed
     print_success "Dependencies installed"
+else
+    print_success "Dependencies already installed, skipping..."
 fi
 
 # Function to run physical device test
 run_physical_test() {
     print_info "Running Physical Device Test..."
-    venv/bin/python device_log_test.py
+    venv/bin/python -m pytest device_log_test.py -v -s
     print_success "Physical Device Test completed!"
 }
 
 # Function to run emulator test
 run_emulator_test() {
     print_info "Running Emulator Test..."
-    venv/bin/python emulator_log_test.py
+    venv/bin/python -m pytest emulator_log_test.py -v -s
     print_success "Emulator Test completed!"
+}
+
+# Function to run both tests with HTML report
+run_html_report() {
+    local timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+    local report_file="$REPORT_DIR/LogProcessingTest_Report_$timestamp.html"
+    
+    print_info "Running both tests with HTML report..."
+    print_info "Report will be saved to: $report_file"
+    
+    venv/bin/python -m pytest device_log_test.py emulator_log_test.py -v -s --html="$report_file" --self-contained-html
+    
+    print_success "HTML report generated: $report_file"
 }
 
 # Parse command line argument
@@ -116,6 +134,9 @@ case "$MODE" in
         echo "============================================================"
         run_emulator_test
         ;;
+    html)
+        run_html_report
+        ;;
     help|--help|-h)
         show_usage
         exit 0
@@ -129,9 +150,10 @@ case "$MODE" in
         echo "1) Physical Device Test"
         echo "2) Emulator Test"
         echo "3) Run Both Tests"
-        echo "4) Exit"
+        echo "4) Run Both Tests with HTML Report"
+        echo "5) Exit"
         echo "============================================================"
-        printf "Enter choice [1-4]: "
+        printf "Enter choice [1-5]: "
         read choice
         
         case $choice in
@@ -148,6 +170,9 @@ case "$MODE" in
                 run_emulator_test
                 ;;
             4)
+                run_html_report
+                ;;
+            5)
                 print_info "Exiting..."
                 exit 0
                 ;;
