@@ -10,12 +10,16 @@ This repository serves as the central location for automation development and ma
 
 ```text
 platform-automation/
+├── FeatureBasedTest/ # Service-level endpoints automation
 ├── FlintAPITest/     # API automation scripts and helpers
 ├── FlintCliTest/     # CLI automation scripts and helpers
 └── FlintUITest/      # UI automation scripts and helpers
 ```
 
 ## Package Overview
+
+### FeatureBasedTest
+Contains feature-based automation that validates platform functionality by invoking service-level endpoints.
 
 ### FlintAPITest
 Contains API automation scripts, test utilities, and reusable API helpers.
