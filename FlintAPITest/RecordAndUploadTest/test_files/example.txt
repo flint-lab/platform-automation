@@ -1,0 +1,7 @@
+This is an example text file.
+
+Use this file to test reading, writing, and uploading functionality.
+
+- Line 1: Example data
+- Line 2: Another sample line
+- Line 3: End of example
